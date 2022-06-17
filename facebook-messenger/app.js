@@ -22,6 +22,12 @@ const express = require("express"),
   i18n = require("./i18n.config"),
   app = express();
 
+// Import FacebookMessengerClient
+const { FacebookMessengerClient } = require("@botanalytics/core");
+
+// Initialize client
+var botanalyticsClient = new FacebookMessengerClient();
+
 var users = {};
 
 // Parse application/x-www-form-urlencoded
@@ -36,6 +42,9 @@ app.use(json({ verify: verifyRequestSignature }));
 
 // Serving static files in Express
 app.use(express.static(path.join(path.resolve(), "public")));
+
+// Use Botanalytics middleware
+app.use(botanalyticsClient.middleware());
 
 // Set template engine in Express
 app.set("view engine", "ejs");
@@ -82,7 +91,7 @@ app.post("/webhook", (req, res) => {
     body.entry.forEach(async function(entry) {
       if ("changes" in entry) {
         // Handle Page Changes event
-        let receiveMessage = new Receive();
+        let receiveMessage = new Receive(botanalyticsClient);
         if (entry.changes[0].field === "feed") {
           let change = entry.changes[0].value;
           switch (change.item) {
@@ -202,7 +211,7 @@ function isGuestUser(webhookEvent) {
 }
 
 function receiveAndReturn(user, webhookEvent, isUserRef) {
-  let receiveMessage = new Receive(user, webhookEvent, isUserRef);
+  let receiveMessage = new Receive(botanalyticsClient, user, webhookEvent, isUserRef);
   return receiveMessage.handleMessage();
 }
 

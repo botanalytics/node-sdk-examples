@@ -19,7 +19,8 @@ const Curation = require("./curation"),
   i18n = require("../i18n.config");
 
 module.exports = class Receive {
-  constructor(user, webhookEvent, isUserRef) {
+  constructor(botanalyticsClient, user, webhookEvent, isUserRef) {
+    this.botanalyticsClient = botanalyticsClient;
     this.user = user;
     this.webhookEvent = webhookEvent;
     this.isUserRef = isUserRef;
@@ -282,6 +283,7 @@ module.exports = class Receive {
       message: response
     };
     GraphApi.callSendApi(requestBody);
+    this.botanalyticsClient.logSendApiMessage(requestBody)
   }
 
   sendMessage(response, delay = 0, isUserRef) {
@@ -336,7 +338,12 @@ module.exports = class Receive {
       }
     }
 
-    setTimeout(() => GraphApi.callSendApi(requestBody), delay);
+    let client = this.botanalyticsClient;
+
+    setTimeout(() => {
+      GraphApi.callSendApi(requestBody);
+      client.logSendApiMessage(requestBody);
+    }, delay);
   }
   sendRecurringMessage(notificationMessageToken, delay) {
     console.log("Received Recurring Message token");
@@ -357,7 +364,12 @@ module.exports = class Receive {
       message: response
     };
 
-    setTimeout(() => GraphApi.callSendApi(requestBody), delay);
+    let client = this.botanalyticsClient;
+
+    setTimeout(() => {
+      GraphApi.callSendApi(requestBody);
+      client.logSendApiMessage(requestBody);
+    }, delay);
   }
   firstEntity(nlp, name) {
     return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
