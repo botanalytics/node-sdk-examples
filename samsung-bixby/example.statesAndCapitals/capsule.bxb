@@ -1,0 +1,20 @@
+capsule {
+  id (example.statesAndCapitals)
+  version (0.1.0)
+  format (3)
+  runtime-version (9) {
+    js-runtime-version (2)
+  }
+  permissions {
+    bixby-user-id-access
+  }
+  targets {
+    target (bixby-mobile-en-US)
+  }
+  store-countries {
+    all
+  }
+  store-sections {
+    section (EducationAndReference)
+  }
+}
