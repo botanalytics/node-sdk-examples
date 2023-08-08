@@ -2,7 +2,7 @@
 
 This section describes how to integrate Botanalytics with Samsung Bixby `States and Capitals Sample Capsule` example.
 
-If you want to skip integration to see `States and Capitals Sample Capsule` example's documentation you can click [here](https://github.com/botanalytics/node-sdk-examples/tree/master/samsung-bixby/example.statesAndCapitals/README.md##overview)
+If you want to skip integration to see `States and Capitals Sample Capsule` example's documentation you can click [here](https://github.com/botanalytics/node-sdk-examples/tree/master/samsung-bixby/example.statesAndCapitals/README.md#overview)
 
 ## Prerequisites
 
@@ -52,11 +52,11 @@ See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/4
 logInput('findCapital', input);
 ```
 
-:::info
+### info
 
 In JavaScript Runtime Version 2, functions instead receive a single parameter, an object with key/value pairs whose keys correspond to the input keys in the action. `logOutput` method returns the provided output, so you can log and return the value in a single statement.
 
-:::
+###
 
 Log output by passing action or intent name, input and output to be returned.
 
