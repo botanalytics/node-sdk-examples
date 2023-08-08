@@ -2,7 +2,7 @@
 
 This section describes how to integrate a Botanalytics with Facebook Messenger `Original Coast Clothing Messenger Bot` example.
 
-If you want to skip integration to see `Original Coast Clothing Messenger Bot` example's documentation you can click [here](https://github.com/botanalytics/node-sdk-examples/blob/master/facebook-messenger/README.md#original-coast-clothing-messenger-bot)
+If you want to skip integration to see `Original Coast Clothing Messenger Bot` example's documentation you can click [here](https://github.com/botanalytics/node-sdk-examples/blob/master/facebook-messenger/original-coast-clothing/README.md#original-coast-clothing-messenger-bot)
 
 ## Installing SDK module
 
