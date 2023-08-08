@@ -6,11 +6,11 @@ This section describes how to integrate a Botanalytics with Amazon Alexa `celebr
 
 Within your project, run the following command depending on the package manager you use:
 
-### tab Npm
+### Npm
 ```bash
 npm install @botanalytics/core
 ```
-### tab Yarn
+### Yarn
 ```bash
 yarn add @botanalytics/core
 ```
@@ -21,7 +21,7 @@ Integrating Botanalytics into your Amazon Alexa voice assistant is quick and eas
 
 ### Include Botanalytics
 
-See [here](https://github.com/botanalytics/node-sdk-examples/blob/11fd40776cc7cde6502c70bd13545aab7160e780/amazon-alexa/celebrity-older-or-younger/index.js#L13)
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/11fd40776cc7cde6502c70bd13545aab7160e780/amazon-alexa/celebrity-older-or-younger/index.js#L13)
 
 ```js
 const { AmazonAlexaClient } = require('@botanalytics/core');
@@ -29,7 +29,7 @@ const { AmazonAlexaClient } = require('@botanalytics/core');
 
 ### Create the client
 
-See [here](https://github.com/botanalytics/node-sdk-examples/blob/11fd40776cc7cde6502c70bd13545aab7160e780/amazon-alexa/celebrity-older-or-younger/index.js#L15)
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/11fd40776cc7cde6502c70bd13545aab7160e780/amazon-alexa/celebrity-older-or-younger/index.js#L15)
 
 ```js
 const botanalyticsClient = new AmazonAlexaClient();
@@ -56,7 +56,7 @@ const botanalyticsClient = new AmazonAlexaClient();
 
 Add Botanalytics client's request interceptor by passing `botanalyticsClient.requestInterceptor()` to `addRequestInterceptors` method.
 
-See [here](https://github.com/botanalytics/node-sdk-examples/blob/11fd40776cc7cde6502c70bd13545aab7160e780/amazon-alexa/celebrity-older-or-younger/index.js#L259C1-L277C15)
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/d94d17208c230189d1a1861864560da23e2c4592/amazon-alexa/celebrity-older-or-younger/index.js#L268C1-L270C6)
 
 ```js
 let handler = Alexa.SkillBuilders.custom()
@@ -72,7 +72,7 @@ let handler = Alexa.SkillBuilders.custom()
 
 Add Botanalytics client's response interceptor by passing `botanalyticsClient.responseInterceptor(false)` to `addResponseInterceptors` method.
 
-See [here](https://github.com/botanalytics/node-sdk-examples/blob/11fd40776cc7cde6502c70bd13545aab7160e780/amazon-alexa/celebrity-older-or-younger/index.js#L259C1-L277C15)
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/d94d17208c230189d1a1861864560da23e2c4592/amazon-alexa/celebrity-older-or-younger/index.js#L271C1-L273C6)
 
 ```js
 let handler = Alexa.SkillBuilders.custom()
