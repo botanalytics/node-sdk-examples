@@ -25,10 +25,7 @@ const { MainDialog } = require('./dialogs/mainDialog');
 
 const { MicrosoftBotFrameworkClient } = require('@botanalytics/core');
 
-const client = new MicrosoftBotFrameworkClient({
-    apiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJjaGFubmVsIjoibWljcm9zb2Z0LWJvdC1mcmFtZXdvcmsifQ.d_QTtDM032aYaviYSjad4RV79UCWFRo9rtHc_kAzJUg',
-    baseUrl: 'https://22f4-213-194-69-204.eu.ngrok.io'
-});
+const botanalyticsClient = new MicrosoftBotFrameworkClient();
 
 // Create HTTP server
 const server = restify.createServer();
@@ -88,7 +85,7 @@ adapter.onTurnError = async (context, error) => {
     await conversationState.clear(context);
 };
 
-adapter.use(client.middleware());
+adapter.use(botanalyticsClient.middleware());
 
 
 // Listen for incoming requests.
