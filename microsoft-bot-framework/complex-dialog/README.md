@@ -1,3 +1,52 @@
+# Microsoft Bot Framework
+
+This section describes how to integrate Botanalytics with Microsoft Bot Framework `Complex Dialog Sample` example.
+
+If you want to skip integration to see `Complex Dialog Sample` example's documentation you can click [here](https://github.com/botanalytics/node-sdk-examples/blob/master/microsoft-bot-framework/complex-dialog/README.md#complex-dialog-sample)
+
+## Installing SDK module
+
+Within your project, run the following command depending on the package manager you use:
+
+### Npm
+```bash
+npm install @botanalytics/core
+```
+### Yarn
+```bash
+yarn add @botanalytics/core
+```
+
+## Integration
+
+Integrating Botanalytics into your Microsoft Bot Framework is quick and easy.
+
+### Include Botanalytics
+
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L26)
+
+```js
+const { MicrosoftBotFrameworkClient } = require('@botanalytics/core');
+```
+
+### Create the client
+
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L28)
+
+```js
+const botanalyticsClient = new MicrosoftBotFrameworkClient();
+```
+
+### Log messages with Botanalytics client
+
+Add Botanalytics client's middleware by passing `botanalyticsClient.middleware()` to `adapter.use()` method.
+
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L88)
+
+```js
+adapter.use(botanalyticsClient.middleware());
+```
+
 # Complex Dialog Sample
 
 This sample creates a complex conversation with dialogs.
