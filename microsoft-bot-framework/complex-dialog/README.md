@@ -23,7 +23,7 @@ Integrating Botanalytics into your Microsoft Bot Framework is quick and easy.
 
 ### Include Botanalytics
 
-See [code here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L26)
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L26)
 
 ```js
 const { MicrosoftBotFrameworkClient } = require('@botanalytics/core');
@@ -31,7 +31,7 @@ const { MicrosoftBotFrameworkClient } = require('@botanalytics/core');
 
 ### Create the client
 
-See [code here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L28)
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L28)
 
 ```js
 const botanalyticsClient = new MicrosoftBotFrameworkClient();
@@ -41,7 +41,7 @@ const botanalyticsClient = new MicrosoftBotFrameworkClient();
 
 Add Botanalytics client's middleware by passing `botanalyticsClient.middleware()` to `adapter.use()` method.
 
-See [code here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L88)
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/26fa93f9f311aff5b815dd7b29e89b067ccd7825/microsoft-bot-framework/complex-dialog/index.js#L88)
 
 ```js
 adapter.use(botanalyticsClient.middleware());
