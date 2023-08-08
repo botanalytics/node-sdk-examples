@@ -52,11 +52,9 @@ See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/4
 logInput('findCapital', input);
 ```
 
-### info
+### Info
 
 In JavaScript Runtime Version 2, functions instead receive a single parameter, an object with key/value pairs whose keys correspond to the input keys in the action. `logOutput` method returns the provided output, so you can log and return the value in a single statement.
-
-###
 
 Log output by passing action or intent name, input and output to be returned.
 
