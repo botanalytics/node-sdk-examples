@@ -12,7 +12,7 @@ const responses = require('./responses');
 
 const { AmazonAlexaClient } = require('@botanalytics/core');
 
-const client = new AmazonAlexaClient();
+const botanalyticsClient = new AmazonAlexaClient();
 
 function initializeIfNeeded(handlerInput) {
     const attributes = handlerInput.attributesManager.getSessionAttributes();
@@ -266,10 +266,10 @@ let handler = Alexa.SkillBuilders.custom()
         SessionEndedRequestHandler,
         IntentReflectorHandler)
     .addRequestInterceptors(
-      client.requestInterceptor()
+      botanalyticsClient.requestInterceptor()
     )
     .addResponseInterceptors(
-      client.responseInterceptor(false)
+      botanalyticsClient.responseInterceptor(false)
     )
     .addErrorHandlers(
         ErrorHandler
