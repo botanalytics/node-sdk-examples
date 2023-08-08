@@ -23,7 +23,7 @@ Integrating Botanalytics into your Facebook Messenger virtual assistant is quick
 
 ### Include Botanalytics
 
-See [code here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L26)
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L26)
 
 ```js
 const { FacebookMessengerClient } = require('@botanalytics/core');
@@ -31,7 +31,7 @@ const { FacebookMessengerClient } = require('@botanalytics/core');
 
 ### Create the client
 
-See [code here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L29)
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L29)
 
 ```js
 const botanalyticsClient = new FacebookMessengerClient();
@@ -57,7 +57,7 @@ const botanalyticsClient = new FacebookMessengerClient();
 
 Add Botanalytics client's middleware by passing `botanalyticsClient.middleware()` to `app.use()` method for your express application.
 
-See [code here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L47)
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L47)
 
 ```js
 app.use(botanalyticsClient.middleware());
