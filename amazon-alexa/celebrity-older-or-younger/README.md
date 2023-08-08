@@ -40,7 +40,7 @@ const botanalyticsClient = new AmazonAlexaClient();
 | Option        				| Required				| Default      	| Description | Environment Variable
 | -------- 				| ------------ 			| ------- 				| ------	    | -----
 | `apiKey`    | Yes						| `Has no default`          |  API key that is provided when a Universal channel is added to a project. | ```BA_API_KEY```
-| `debug`    | No						| `False`           |  Enables logging. Set this to `true` or `True` to enable. | ```BA_DEBUG```
+| `debug`    | No						| `false`           |  Enables logging. Set this to `true` to enable. | ```BA_DEBUG```
 | `baseUrl`    | No						| `https://api.beta.botanalytics.co/v2`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team. | ```BA_BASE_URL```
 
 
