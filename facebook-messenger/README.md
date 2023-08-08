@@ -1,3 +1,68 @@
+# Facebook Messenger
+
+This section describes how to integrate a Botanalytics with Facebook Messenger `Original Coast Clothing Messenger Bot` example.
+
+If you want to skip integration to see `Original Coast Clothing Messenger Bot` example's documentation you can click [here](https://github.com/botanalytics/node-sdk-examples/edit/master/facebook-messenger/README.md/README.md?plain=1#L64)
+
+## Installing SDK module
+
+Within your project, run the following command depending on the package manager you use:
+
+### Npm
+```bash
+npm install @botanalytics/core
+```
+### Yarn
+```bash
+yarn add @botanalytics/core
+```
+
+## Integration
+
+Integrating Botanalytics into your Facebook Messenger virtual assistant is quick and easy.
+
+### Include Botanalytics
+
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L26)
+
+```js
+const { FacebookMessengerClient } = require('@botanalytics/core');
+```
+
+### Create the client
+
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L29)
+
+```js
+const botanalyticsClient = new FacebookMessengerClient();
+```
+
+### Configuration options
+
+| Option        				| Required				| Default      	| Description | Environment Variable
+| -------- 				| ------------ 			| ------- 				| ------	    | -----
+| `apiKey`    | Yes						| `Has no default`          |  API key that is provided when a Universal channel is added to a project. | ```BA_API_KEY```
+| `debug`    | No						| `false`           |  Enables logging. Set this to `true` to enable. | ```BA_DEBUG```
+| `baseUrl`    | No						| `https://api.beta.botanalytics.co/v2`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team. | ```BA_BASE_URL```
+
+
+### Additional environment variables/options
+| Name        				| Required				| Default      	| Description | Environment Variable
+| -------- 				| ------------ 			| ------- 				| ------	    | -----
+| Could only be set via environment variable.    | No                       | `INFO`          |  Log level for the logger. Could be set one of following options `'fatal'`, `'error'`, `'warn'`, `'info`', `'debug'`, `'trace'` or `'silent'`.  | ```BA_LOG_LEVEL```
+| `requestRetryLimit`    | No						| `10`           |  Request retry limit for the client | ```BA_REQUEST_RETRY_LIMIT```
+| `requestTimeout`    | No						| `30000`           | Request timeout for the client  | ```BA_REQUEST_TIMEOUT```
+
+### Log messages with Botanalytics client
+
+Add Botanalytics client's middleware by passing `botanalyticsClient.middleware()` to `app.use()` method for your express application.
+
+See [code here](https://github.com/botanalytics/node-sdk-examples/blob/9372d87c3a0231157e621d185724f559c76e40ae/facebook-messenger/app.js#L47)
+
+```js
+app.use(botanalyticsClient.middleware());
+```
+
 # Original Coast Clothing Messenger Bot
 
 Original Coast Clothing (OC) is a fictional clothing brand created to showcase key features of the Messenger Platform. OC leverages key features to deliver a great customer experience. Using this demo as inspiration, you can create a delightful messaging experience that leverages both automation and live customer support. We are also providing the open source code of the app and a guide to deploy the experience on your local environment or remote server.
