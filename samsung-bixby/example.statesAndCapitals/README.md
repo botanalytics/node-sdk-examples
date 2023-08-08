@@ -1,3 +1,74 @@
+# Samsung Bixby
+
+This section describes how to integrate Botanalytics with Samsung Bixby `States and Capitals Sample Capsule` example.
+
+If you want to skip integration to see `States and Capitals Sample Capsule` example's documentation you can click [here](https://github.com/botanalytics/node-sdk-examples/tree/master/samsung-bixby/example.statesAndCapitals/README.md##overview)
+
+## Prerequisites
+
+A Samsung Bixby capsule that:
+* Uses [JavaScript Runtime Version 2](https://bixbydevelopers.com/dev/docs/dev-guide/developers/actions.jsrs)
+* Has [`bixby-user-id-access` permission](https://bixbydevelopers.com/dev/docs/reference/type/capsule.permissions.bixby-user-id-access)
+* Is registered on the Samsung Bixby Developer Console (for setting configurations and secrets)
+
+## Integration
+
+### Copy Botanalytics library
+
+Copy the [`botanalytics.js` file](https://github.com/botanalytics/node-sdk/blob/v3.x/samsung-bixby/lib/botanalytics.js) from our official GitHub repository to the `code/lib/` folder in your Samsung Bixby capsule.
+
+### Add Configurations & Secrets
+
+On Samsung Bixby Developer Console, open the Configuration & Secrets page under your capsule settings and set required values.
+
+#### Secrets
+
+| Name        				| Required		| Default      							| Description
+| ----------- 				| ------------  |------------ 							| -----
+| `botanalytics.apiKey`    | Yes				| Has no default          | API key that is provided when a Samsung Bixby channel is added to a project.
+
+#### Configurations
+
+| Name        				| Required				| Default      							| Description
+| ----------- 				| ------------ 			| ------------ 							| -----
+| `botanalytics.baseUrl`    | No						| `https://api.beta.botanalytics.co/v2`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team.
+| `botanalytics.failFast`   | No						| `no`       							    | Whether to fail when an exception is encountered when sending data to Botanalytics. To enable this feature, set this to `true` or `yes`.
+
+### Log interactions with your capsule
+
+Import Botanalytics library:
+
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/4032cb9035a60196d8918d5bcd8b4e5bafda1be0/samsung-bixby/example.statesAndCapitals/code/FindCapital.js#L5)
+
+```js
+import { logInput, logOutput } from './lib/botanalytics.js';
+```
+
+Log input by passing action or intent name:
+
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/4032cb9035a60196d8918d5bcd8b4e5bafda1be0/samsung-bixby/example.statesAndCapitals/code/FindCapital.js#L9)
+
+```js
+logInput('findCapital', input);
+```
+
+:::info
+
+In JavaScript Runtime Version 2, functions instead receive a single parameter, an object with key/value pairs whose keys correspond to the input keys in the action. `logOutput` method returns the provided output, so you can log and return the value in a single statement.
+
+:::
+
+Log output by passing action or intent name, input and output to be returned.
+
+See code example [here](https://github.com/botanalytics/node-sdk-examples/blob/4032cb9035a60196d8918d5bcd8b4e5bafda1be0/samsung-bixby/example.statesAndCapitals/code/FindCapital.js#L24C1-L27C6)
+
+```js
+  return logOutput('findCapital', input, {
+    capital: capital,
+    stateGraphic: stateGraphic,
+  });
+```
+
 <p align="Center">
   <img src="https://bixbydevelopers.com/dev/docs-assets/resources/dev-guide/bixby_logo_github-11221940070278028369.png">
   <br/>
